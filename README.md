@@ -24,7 +24,7 @@ What we did today:
 * Vincent Nguyen: Research Back End tools for project
 
 What we discussed:
-* Planning: We briefly discussed the overview of the project and began plan
+* Planning: We briefly discussed the overview of the project and began planning.
 
 * Requirements:
  We are thinking of using React for Front End development and SQL for the database.
