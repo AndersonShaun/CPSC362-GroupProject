@@ -33,3 +33,17 @@ What we discussed:
 What's for next:
 
 * Rough sketch for UI
+
+## Scrum Update @ 8 March
+
+What we discussed today:
+
+More planning, front-end development for the next 2 weeks.
+
+We will begin designing and implementing the user interface of the task management system.
+
+Requirements:
+* 4 Main Column Categories (TO-DO, In Progress, Complete, Dropped).
+* Tasks will be represented as rectangular boxes nested within the columns
+* Each Task will have a dropdown menu with buttons for executing specific actions (Move to, Edit, Delete, etc...)
+* Tasks can only be created in the TO-DO column.
