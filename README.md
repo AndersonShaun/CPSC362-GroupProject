@@ -47,3 +47,12 @@ Requirements:
 * Tasks will be represented as rectangular boxes nested within the columns
 * Each Task will have a dropdown menu with buttons for executing specific actions (Move to, Edit, Delete, etc...)
 * Tasks can only be created in the TO-DO column.
+
+
+Week of 3/15/24
+Shaun- work on front end
+Chris- work on data base
+Vincent- work on back end
+Aisha- will take updates from everyone once a week and update readme
+Tasks Done- 
+Worked on front end
