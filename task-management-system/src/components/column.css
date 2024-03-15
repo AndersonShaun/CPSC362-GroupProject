@@ -1,0 +1,18 @@
+.Kanban-board {
+    display: flex;
+    float: left;
+    gap: 20px;
+}
+
+.task-column-list {
+    /* display: flex; */
+    /* float: left; */
+    padding: 40px;
+    margin: 10px;
+    border: 2px solid red;
+}
+
+.task {
+    display: block;
+    padding: 10px;
+}
