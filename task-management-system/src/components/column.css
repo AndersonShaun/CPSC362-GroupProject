@@ -18,6 +18,28 @@
     /* background-color: solid orange; */
 }
 
+.delete-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+}
+
+.cancel-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    
+}
+
+.move-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+}
+
 .task-column-list {
     /* display: flex; */
     float: left;
