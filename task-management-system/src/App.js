@@ -55,7 +55,7 @@ function TaskColumn({ tasks, colName, onTaskClick, updateFrontEndTasks}) {
     <div className="column">
       {/* Render the "Add Task" button only for the "To-Do" column */}
       {colName === "To-Do" && (
-        <button className ="add-button" onClick={handleAddTaskClick}>Add Task</button>
+        <button className ="add-task-button" onClick={handleAddTaskClick}>Add Task</button>
       )}
       {/* Render the column header */}
       <h2>{colName}</h2>
@@ -70,15 +70,34 @@ function TaskColumn({ tasks, colName, onTaskClick, updateFrontEndTasks}) {
         </div>
       ))}
       {/* Add Task Modal */}
-      <Modal isOpen={addTaskModalIsOpen} onRequestClose={closeAddTaskModal}>
+      <Modal
+        isOpen={addTaskModalIsOpen}
+        onRequestClose={closeAddTaskModal}
+        style={{
+          overlay: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)'
+          },
+          content: {
+            position: 'absolute',
+            margin: 'auto',
+            maxWidth: '350px',
+            maxHeight: '325px',
+            overflow: 'auto'
+          }
+        }}
+      >
         <h2>Add New Task</h2>
         <form>
           <label htmlFor="taskName">Task Name: </label>
-          <input type="text" id="taskName" />
-          <label htmlFor="taskDescription">Task Description: </label>
-          <input type="text" id="taskDescription" style={{ height: '100px' }}/>
+          <input type="text" id="taskName" style={{ display: 'block', width: '300px' }}/>
+          <br></br>
+          <label htmlFor="taskDescription" style={{ display: 'block' }}>Task Description: </label>
+          <textarea type="text" id="taskDescription" style={{ height: '100px', width: '300px', resize: 'none' }}/>
           <button className="cancel-button" onClick={closeAddTaskModal}>Cancel</button>
-          <button onClick={appendTask}>Add Task</button>
+          <button className="add-button" onClick={appendTask}>Add Task</button>
         </form>
       </Modal>
     </div>
@@ -86,6 +105,8 @@ function TaskColumn({ tasks, colName, onTaskClick, updateFrontEndTasks}) {
 }
 
 function App() {
+  const columnOrder = ['To-Do', 'In-Progress', 'Completed', 'Dropped'];
+
   // Various state variables
   const [initialTasks, setInitialTasks] = useState({});
   const [taskInfoModalIsOpen, setTaskInfoModalIsOpen] = useState(false);
@@ -252,21 +273,47 @@ function App() {
   // Render the Kanban board, consisting of TaskColumn components for each column
   return (
     <div className="Kanban-board">
+      {/* Define the desired order of columns */}
+      
+
       {/* Map over each column in initialTasks and render a TaskColumn component */}
-      {Object.keys(initialTasks).reverse().map((columnName, index) => (
+      {columnOrder.map((columnName, index) => (
         <div key={index} className="task-column-list">
           {/* Render a TaskColumn component */}
-          <TaskColumn
-            tasks={initialTasks[columnName]}
-            colName={columnName}
-            onTaskClick={handleTaskClick}
-            updateFrontEndTasks={updateFrontEndTaskColumns}
-          />
+          {Object.keys(initialTasks)
+            .filter(key => key === columnName)
+            .map(filteredColumnName => (
+            <TaskColumn
+              tasks={initialTasks[columnName]}
+              colName={columnName}
+              onTaskClick={handleTaskClick}
+              updateFrontEndTasks={updateFrontEndTaskColumns}
+            />
+          ))}
+            
         </div>
       ))}
 
       {/* Task Info Modal*/}
-      <Modal isOpen={taskInfoModalIsOpen} onRequestClose={closeTaskInfoModal}>
+      <Modal
+        isOpen={taskInfoModalIsOpen}
+        onRequestClose={closeTaskInfoModal}
+        style={{
+          overlay: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)' // Semi-transparent overlay
+          },
+          content: {
+            position: 'absolute',
+            margin: 'auto',
+            maxWidth: '350px', // Adjust as needed
+            maxHeight: '325px', // Adjust as needed
+            overflow: 'auto' // Enable scrolling if content overflows
+          }
+        }}
+      >
         {/* Render task information and various buttons*/}
         <h2>{selectedTask && selectedTask.name}</h2>
         <p>{selectedTask && selectedTask.description}</p>
@@ -277,7 +324,25 @@ function App() {
       </Modal>
 
       {/* Move Modal*/}
-      <Modal isOpen={moveModalIsOpen} onRequestClose={() => setMoveModalIsOpen(false)}>
+      <Modal
+        isOpen={moveModalIsOpen}
+        onRequestClose={() => setMoveModalIsOpen(false)}
+        style={{
+          overlay: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)' // Semi-transparent overlay
+          },
+          content: {
+            position: 'absolute',
+            margin: 'auto',
+            maxWidth: '350px', // Adjust as needed
+            maxHeight: '325px', // Adjust as needed
+            overflow: 'auto' // Enable scrolling if content overflows
+          }
+        }}
+      >
         {/* Render move modal content */}
         <h2>Move this task to where?</h2>
         <p>Select where to move task: </p>
@@ -294,7 +359,25 @@ function App() {
       </Modal>
       
       {/* Edit Modal*/}
-      <Modal isOpen={editModalIsOpen} onRequestClose={() => setEditModalIsOpen(false)}>
+      <Modal
+        isOpen={editModalIsOpen}
+        onRequestClose={() => setEditModalIsOpen(false)}
+        style={{
+          overlay: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)' // Semi-transparent overlay
+          },
+          content: {
+            position: 'absolute',
+            margin: 'auto',
+            maxWidth: '350px', // Adjust as needed
+            maxHeight: '325px', // Adjust as needed
+            overflow: 'auto' // Enable scrolling if content overflows
+          }
+        }}
+      >
         <h2>Edit</h2>
         <div>
           <label htmlFor="editName">Task Name: </label>
@@ -302,17 +385,21 @@ function App() {
             type="text"
             id="editName"
             defaultValue={selectedTask?.name}
+            style={{ display: 'block', width: '300px' }}
             onChange={(e) => {
               console.log('New name: ', e.target.value);
               setSelectedTask({
                 ...selectedTask,
                 name: e.target.value
               });
-            }}/>
+            }}
+          />
+          <br></br>
           <label htmlFor="editName">Task Description: </label>
-          <input
+          <textarea
             type="text"
             id="editDescription"
+            style={{ height: '100px', width: '300px', resize: 'none' }}
             defaultValue={selectedTask?.description}
             onChange={(e) => {
               console.log('New description: ', e.target.value);
