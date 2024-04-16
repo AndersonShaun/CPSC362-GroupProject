@@ -1,7 +1,5 @@
-// import logo from './logo.svg';
 import React, { useState, useEffect } from 'react';
 import './components/column.css';
-import './App.css';
 import Modal from 'react-modal';
 import axios from 'axios';
 
@@ -20,7 +18,7 @@ function TaskColumn({ tasks, colName, onTaskClick, updateFrontEndTasks}) {
   const closeAddTaskModal = () => {
     setAddTaskModalIsOpen(false);
   }
-
+  
   // Function to add a new task to the To-Do column
   const appendTask = async (event) => {
     event.preventDefault();
