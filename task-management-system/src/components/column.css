@@ -9,14 +9,6 @@
     background-color: rgb(219, 219, 197);
   }
   
-  .Kanban-board h1 {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-  }
-  
   .add-task-button {
     position: absolute;
     top: 10px;
