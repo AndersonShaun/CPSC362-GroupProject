@@ -1,70 +1,85 @@
 .Kanban-board {
     position: absolute;
     display: flex;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    /* float: left; */
-    background-color: hsl(57, 81%, 45%);
-    /* border: 2px solid red; */
-    /* gap: 20px; */
-}
-
-.add-button {
+    background-color: rgb(219, 219, 197);
+  }
+  
+  .Kanban-board h1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+  
+  .add-button {
     position: absolute;
     top: 10px;
     right: 10px;
-    /* background-color: solid orange; */
-}
-
-.delete-button {
+  }
+  
+  .delete-button {
     position: absolute;
     bottom: 10px;
     right: 10px;
     padding: 10px;
-}
-
-.cancel-button {
+  }
+  
+  .cancel-button {
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 10px;
-}
-
-.edit-button {
+  }
+  
+  .edit-button {
     position: absolute;
     bottom: 10px;
     left: 70px;
     padding: 10px;
-}
-
-.update-button {
+  }
+  
+  .update-button {
     position: absolute;
     bottom: 10px;
     right: 10px;
     padding: 10px;
-}
-
-.move-button {
+  }
+  
+  .move-button {
     position: absolute;
     bottom: 10px;
     left: 10px;
     padding: 10px;
-}
-
-.task-column-list {
-    /* display: flex; */
-    float: left;
-    position: relative;
-    padding: 40px;
-    margin: 90px;
-    border: 2px solid green;
-}
-
-.task {
-    /* position: relative; */
-    display: block;
+  }
+  
+  .task-column-list {
+    flex: 1;
+    margin: 90px 50px;
     padding: 20px;
-    border: 2px solid blue;
-}
+    border: 2px solid black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .task-column-list h2 {
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  
+  .task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    border: 2px solid black;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    }
