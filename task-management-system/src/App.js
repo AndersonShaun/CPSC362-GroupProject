@@ -170,8 +170,12 @@ function App() {
         updatedTasks[columnName] = prevTasks[columnName].filter(t => t._id !== task._id);
         console.log("deleted task from: ", columnName);
       } else if (action === "update") {
-        // Update the specified column with the updated task
-        updatedTasks[columnName] = [updatedTask];
+       // Find the index of the task to be updated
+        const taskIndex = updatedTasks[columnName].findIndex(task => task._id === updatedTask._id);
+        if (taskIndex !== -1) {
+          // If the task is found, update it in the array
+          updatedTasks[columnName][taskIndex] = updatedTask;
+        }
         console.log("Updated: ", updatedTasks[columnName]);
       }
       return updatedTasks;
