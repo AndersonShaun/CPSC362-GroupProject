@@ -288,6 +288,7 @@ function App() {
             .filter(key => key === columnName)
             .map(filteredColumnName => (
             <TaskColumn
+              key={filteredColumnName}
               tasks={initialTasks[columnName]}
               colName={columnName}
               onTaskClick={handleTaskClick}
