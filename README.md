@@ -7,31 +7,31 @@
 
 ## How to Run
 
-[https://youtu.be/1lJfDy_az8E](Video Demonstration)
+[Video Demonstration Link]: https://youtu.be/1lJfDy_az8E
 
-Setting up the database:
-Have MongoDB Tools installed on your system.
-Navigate to ‘/task-management-system/database’ within the applications directory in the terminal and run the following command:
-	`mongorestore`
-Verify through MongoDBCompass or mongosh that the Tasks database has been restored on your computer.
+-Setting up the database:
+-Have MongoDB Tools installed on your system.
+-Navigate to ‘/task-management-system/database’ within the applications directory in the terminal and run the following command:
+	-`mongorestore`
+-Verify through MongoDBCompass or mongosh that the Tasks database has been restored on your computer.
 
 ![SRS](mongodbcompass.png)
 
-To run the Kanban Board application:
-Make sure you have Node.js and Python installed on your system.
-Navigate to the ‘/task-management-system’ of the application directory in the terminal.
-Install the required React dependencies by running the following command:
-`npm install axios`
-`npm install react-modal`
-Install the required React dependencies by running the following command:
-`npm install`
-Start the Flask backend server by running the following command:
-`python server.py`
-In a separate terminal window, navigate to the task-management-system/src and start the React development server by running the following command:
-`npm start`
-Open your web browser and visit http://localhost:3000 to access the application.
-Frontend (App.js)
-The frontend of the application is built using React and is responsible for rendering the user interface and handling user interactions.
+-To run the Kanban Board application:
+-Make sure you have Node.js and Python installed on your system.
+-Navigate to the ‘/task-management-system’ of the application directory in the terminal.
+-Install the required React dependencies by running the following command:
+-`npm install axios`
+-`npm install react-modal`
+-Install the required React dependencies by running the following command:
+-`npm install`
+-Start the Flask backend server by running the following command:
+-`python server.py`
+-In a separate terminal window, navigate to the task-management-system/src and start the React development server by running the following command:
+-`npm start`
+-Open your web browser and visit http://localhost:3000 to access the application.
+-Frontend (App.js)
+-The frontend of the application is built using React and is responsible for rendering the user interface and handling user interactions.
 
 
 ## Software Requirement Specification
