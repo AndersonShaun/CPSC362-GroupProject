@@ -15,7 +15,7 @@ Have MongoDB Tools installed on your system.
 
 Navigate to ‘/task-management-system/database’ within the applications directory in the terminal and run the following command:
 
-	`mongorestore`
+	mongorestore
 
 Verify through MongoDBCompass or mongosh that the Tasks database has been restored on your computer.
 
