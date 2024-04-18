@@ -1,5 +1,10 @@
 # Task Management System (Group 4)
 
+## What is This?
+Group 4 project is a web-based application that allows users to manage and track tasks using a Kanban-style board. The project consists of a React frontend and a Flask backend with MongoDB as the database.
+![SRS](PopulatedColumns.png)
+
+
 ## Requirements
 - Node.js
 - Visual Studio Code
