@@ -6,6 +6,9 @@
 -
 -
 
+## How to Run
+![SRS](mongodbcompass.png)
+
 ## Software Requirement Specification
 ![SRS](TaskManagementSystemImage.png)
 
