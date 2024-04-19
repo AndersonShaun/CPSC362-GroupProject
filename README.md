@@ -43,13 +43,9 @@ Install the required React dependencies by running the following command:
 
 `npm install`
 
-Install the required Python libraries with:
-
-`python pip install `
-
 Navigate to `/task-management-system/backend` in the terminal and run the following command to initial the backend server:
 
-`python server.py`
+`pip install -r requirements.txt`
 
 In a separate terminal window, navigate to the `task-management-system` and start the React development server by running the following command:
 
