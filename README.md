@@ -31,7 +31,7 @@ To run the Kanban Board application:
 
 Make sure you have Node.js and Python installed on your system.
 
-Navigate to the ‘/task-management-system’ of the application directory in the terminal.
+Navigate to the `/task-management-system` of the application directory in the terminal.
 
 Install the required React dependencies by running the following command:
 
@@ -43,11 +43,11 @@ Install the required React dependencies by running the following command:
 
 `npm install`
 
-Start the Flask backend server by running the following command:
+Navigate to `/task-management-system/backend` in the terminal and run the following command to initial the backend server:
 
 `python server.py`
 
-In a separate terminal window, navigate to the task-management-system/src and start the React development server by running the following command:
+In a separate terminal window, navigate to the `task-management-system` and start the React development server by running the following command:
 
 `npm start`
 
