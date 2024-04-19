@@ -25,7 +25,7 @@ Navigate to ‘/task-management-system/database’ within the applications direc
 Verify through MongoDBCompass or mongosh that the Tasks database has been restored on your computer.
 
 
-![SRS](mongodbcompass.png)
+![SRS](MongoTasksDB.png)
 
 To run the Kanban Board application:
 
@@ -42,6 +42,10 @@ Install the required React dependencies by running the following command:
 Install the required React dependencies by running the following command:
 
 `npm install`
+
+Install the required Python libraries with:
+
+`python pip install `
 
 Navigate to `/task-management-system/backend` in the terminal and run the following command to initial the backend server:
 
